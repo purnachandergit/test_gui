@@ -1,0 +1,33 @@
+@import "../../../../assets/sass/variables";
+
+:host {
+    position: relative;
+    display: block;
+
+    input {
+        padding-left: 2rem;
+    }
+
+    .icon {
+        position: absolute;
+        color: $layout-text-color-faded;
+        top: .5rem;
+        left: .5rem;
+        z-index: 2;
+    }
+
+    ::-webkit-input-placeholder {
+        color: $layout-text-color-faded;
+    }
+    :-moz-placeholder {
+        color: $layout-text-color-faded;
+        opacity: 1;
+    }
+    ::-moz-placeholder {
+        color: $layout-text-color-faded;
+        opacity: 1;
+    }
+    :-ms-input-placeholder {
+        color: $layout-text-color-faded;
+    }
+}

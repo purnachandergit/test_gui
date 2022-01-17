@@ -1,0 +1,55 @@
+@import "../../../../assets/sass/variables";
+
+:host {
+
+    width: 100%;
+
+    .direct-editing-disabled {
+        .form-control {
+            padding-left: 30px;
+        }
+    }
+
+    /deep/ {
+        .validation-icon {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            z-index: 4;
+
+            &.result {
+                color: $text-muted;
+                top: 5px;
+                font-weight: bold;
+            }
+        }
+
+    }
+
+    .expression-input-group {
+        position: relative;
+        border-radius: $input-border-radius;
+        border: 1px solid transparent;
+
+        &:hover {
+            border: 1px solid $input-bg-hover;
+        }
+
+        .input-group {
+            display: flex;
+        }
+
+        .input-group-btn {
+            width: initial;
+        }
+
+        .btn-icon {
+            width: 46px;
+            margin-left: -1px;
+        }
+
+        .input-group-btn, input {
+            cursor: pointer;
+        }
+    }
+}

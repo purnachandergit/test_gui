@@ -1,0 +1,109 @@
+@import "../../../assets/sass/variables";
+
+:host {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-size: $font-size-sm;
+    height: 2em;
+    line-height: $layout-stripe-width - 6;
+
+    .sidebar-toggle-btn-group {
+        height:100%;
+    }
+
+    .sidebar-toggle {
+        font-size: 1.3rem;
+        height:100%;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .loader {
+        border: 1.5px solid $layout-section-background;
+        border-top: 1.5px solid $brand-primary;
+
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        position: relative;
+        top: 2px;
+        margin-right: 2px;
+        display: inline-block;
+        animation: spin .65s linear infinite;
+    }
+
+    .status-element,
+    /deep/ .tag {
+        vertical-align: middle;
+    }
+
+    .status-item {
+        //flex: 1 1 0;
+        text-align: center;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+
+        &:first-child {
+            text-align: left;
+        }
+
+        &:last-child {
+            text-align: right;
+        }
+
+        .btn-group .btn {
+            padding: 0 12px;
+            line-height: $layout-stripe-width - 7;
+        }
+    }
+
+    /deep/ .status-buttons {
+        .btn {
+            background: none;
+            line-height: 2em;
+            color: $layout-text-color;
+            border: 1px solid transparent;
+            border-left-color: #222;
+            padding: 0 20px;
+            border-radius: 0;
+
+            &.active {
+                background: $black;
+            }
+
+            &:active, &:focus {
+                outline: none;
+            }
+        }
+
+        .tag {
+            color: white;
+            font-size: 100%;
+            font-weight: normal;
+            margin-right: 2px;
+
+            &.tag-warning {
+                background-color: $brand-warning;
+            }
+
+            &.tag-info {
+                background-color: $sky;
+
+            }
+        }
+
+        i {
+            margin-right: 2px;
+        }
+    }
+}

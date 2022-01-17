@@ -1,0 +1,38 @@
+@import "../../../../assets/sass/variables";
+
+.validatable {
+
+    &.error {
+        .validation-icon {
+            color: $editor-panel-error-selected-border;
+        }
+
+        &:hover, &.selected, &.ct-inspected {
+            border-color: $editor-panel-error-selected-border;
+        }
+
+        &.selected, &.ct-inspected {
+            background-color: $editor-panel-error-selected-background;
+        }
+    }
+
+    &.warning {
+        .validation-icon {
+            color: $editor-panel-warning-selected-border;
+        }
+
+        &:hover, &.selected, &.ct-inspected {
+            border-color: $editor-panel-warning-selected-border;
+        }
+
+        &.selected, &.ct-inspected {
+            background-color: $editor-panel-warning-selected-background;
+        }
+    }
+
+    &.selected, &.ct-inspected {
+        .validation-icon {
+            color: $editor-panel-icon-selected-color;
+        }
+    }
+}

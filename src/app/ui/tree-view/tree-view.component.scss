@@ -1,0 +1,6 @@
+@import "../../../assets/sass/variables";
+
+:host {
+    display: block;
+    color: $layout-text-color;
+}

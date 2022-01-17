@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    flex-direction: column;
+
+    ct-action-bar {
+        flex-direction: row-reverse;
+        padding-right: .5em;
+    }
+
+    .editor-layout {
+        position: relative;
+        display: flex;
+        flex: 1;
+    }
+}

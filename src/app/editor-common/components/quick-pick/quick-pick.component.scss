@@ -1,0 +1,66 @@
+@import "../../../../assets/sass/variables";
+
+:host {
+    margin-bottom: 10px;
+    display: flex;
+
+    .suggestions {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+
+        .btn {
+            flex: 1;
+            margin-right: 10px;
+        }
+    }
+
+    .radio-container .btn {
+        background-color: $input-bg;
+        color: $smoke;
+        border: $layout-section-border-light;
+
+        &.selected {
+            border-color: $brand-primary;
+        }
+
+        &:hover {
+            border-color: $brand-primary;
+        }
+    }
+
+    .custom-btn {
+        flex-grow: 0;
+        flex-shrink: 1;
+    }
+
+    .custom-wrapper {
+        overflow: hidden;
+
+        input {
+            float: left;
+            margin-right: 30px;
+        }
+    }
+
+    .radio-container {
+        display: flex;
+        flex: 1;
+
+        input[type=radio] {
+            display: none;
+        }
+    }
+
+    .removable-form-control {
+        display: flex;
+        width: 100%;
+
+        ct-expression-input {
+            flex: 1;
+        }
+    }
+}
+
+
+

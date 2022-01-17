@@ -1,0 +1,29 @@
+@import "../../../../assets/sass/variables";
+
+:host {
+    display: flex;
+    width: 100%;
+
+    .key-container {
+        border: 1px solid transparent;
+        display: flex;
+        flex: 1;
+
+        .error-validation-icon, .warning-validation-icon {
+            margin: auto;
+        }
+
+        .error-validation-icon {
+            color: $brand-danger;
+        }
+
+        .warning-validation-icon {
+            color: $brand-warning;
+        }
+    }
+
+    .expression-input {
+        flex: 1;
+    }
+}
+

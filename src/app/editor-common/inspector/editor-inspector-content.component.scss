@@ -1,0 +1,60 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/_mixins";
+
+:host {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+
+    .header {
+        border: 1px solid transparent;
+        border-bottom: 1px solid $toolbar-border;
+    }
+
+    .form-section {
+        position: relative;
+        display: block;
+        overflow: auto;
+        height: 100%;
+        overflow-x: hidden;
+
+        .borderless & {
+            border: none;
+            padding: 0;
+        }
+
+        .hide-button {
+            position: absolute;
+        }
+
+        .add-btn-link {
+            padding: 0;
+            margin-top: 10px;
+        }
+    }
+
+    .editor-list-title {
+        font-family: $font-family-title;
+        font-size: $font-size-sm;
+        font-weight: 400;
+    }
+
+    .text-title {
+        .tc-header {
+            @include ellipsis();
+        }
+    }
+
+    .gui-section-body {
+        height: 0;
+
+        hr { //element selector because that's how bootstrap styles it
+            margin-left: - $grid-gutter-width-base/2;
+            margin-right: - $grid-gutter-width-base/2;
+        }
+
+        &.show {
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+:host {
+    width: 100%;
+
+    .list-item {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 0.5rem;
+    }
+
+    .key-input {
+        flex: 5;
+    }
+
+    .value-input {
+        flex: 5;
+    }
+
+    .add-on {
+        flex-basis: 20px;
+    }
+
+    .add-entry-btn {
+        border: none;
+    }
+}

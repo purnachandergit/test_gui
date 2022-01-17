@@ -1,0 +1,71 @@
+@import "./../../../assets/sass/variables";
+
+:host {
+
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+
+
+    .main-content {
+        display: flex;
+        flex-direction: row;
+        flex: 1 0 0;
+        border-bottom: $layout-section-border-light;
+    }
+
+    .panel-column {
+        display: flex;
+        flex: 1 0 0;
+        flex-direction: column;
+        min-width:0; // Chromium hack, otherwise wide nodes would push the column width
+    }
+
+    ct-status-bar {
+        flex-basis: $layout-stripe-width;
+        background: $layout-section-background;
+    }
+
+    .title-bar-section {
+        background: $black;
+        height: $layout-title-bar-height;
+    }
+
+    .logo {
+        width: 100%;
+        line-height: $layout-title-bar-height;
+    }
+
+    .layout-section {
+        color: $layout-section-font-color;
+        background: $sidebar-panel-bg;
+    }
+
+    .handle-vertical {
+        background: $sidebar-panel-bg;
+        cursor: col-resize;
+        display: inline-block;
+        width: $panel-resize-handle-width;
+        border-right: $layout-section-border-light;
+
+        &:before {
+            content: '';
+            display: block;
+            position: relative;
+            background-color: $black;
+            width: $panel-resize-handle-width;
+            height: $layout-title-bar-height;
+        }
+
+        &.hidden {
+            width: 1px;
+        }
+
+    }
+
+    .top-bar {
+        height: $main-header-height;
+    }
+}

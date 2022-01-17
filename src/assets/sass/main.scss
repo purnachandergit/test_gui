@@ -1,0 +1,108 @@
+@import "variables";
+@import "bootstrap-pack";
+@import "mixins";
+@import "resets";
+@import "utils";
+@import "typography";
+@import "icons";
+@import "forms";
+@import "alerts";
+@import "./variables";
+@import "~selectize/dist/css/selectize.default.css";
+@import "./theme";
+
+@import "~cwl-svg/src/assets/styles/themes/rabix-dark/theme";
+@import "~cwl-svg/src/plugins/port-drag/theme.dark";
+@import "~cwl-svg/src/plugins/selection/theme.dark";
+@import "~cwl-svg/src/plugins/validate/validate";
+
+@import "~font-awesome/css/font-awesome.min.css";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    color: $text-color;
+    background: $body-bg;
+    font-size: $font-size-base;
+}
+
+.loading-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+[data-marker] {
+    display: none;
+}
+
+.editor-list-title {
+    &.editable {
+        margin-right: 1rem;
+        padding-right: 10px;
+    }
+}
+
+.editor-list {
+    .children {
+        padding-top: 10px;
+        border: 1px solid $black;
+        border-top: none;
+    }
+
+    .ct-inspected + .children {
+        border: 1px solid $brand-primary;
+        border-top: none;
+    }
+}
+
+.editor-list-item > div:first-child {
+    height: 1em;
+}
+
+.editor-list-item-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.editor-list-item {
+    flex: 1;
+    display: flex;
+}
+
+.input-list-items {
+    display: flex;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    list-style: none;
+
+    &.record-input {
+        .editor-list-item {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+
+.remove-icon {
+    display: flex;
+    width: 10px;
+    height: 1rem;
+    margin-left: 1em;
+    margin-top: 0.5em;
+
+    i:hover {
+        color: $light-gray;
+    }
+}
+
+.logo-img {
+    height: 100px;
+    width: 100px;
+    background: url("../img/rc-icon-256x256.png") no-repeat center;
+    background-size: contain;
+}

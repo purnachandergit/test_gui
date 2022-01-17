@@ -1,0 +1,54 @@
+<ct-search-field [formControl]="searchContent"
+                 [placeholder]="'Search'"></ct-search-field>
+
+<div>
+    <button class="btn btn-link app-sources-btn" data-test="add-sources-button"
+            (click)="openAddAppSourcesDialog()">
+        <i class="fa fa-fw fa-plus"></i> Open a Project
+    </button>
+
+    <button class="btn btn-link sync-btn"
+            data-test="sync-button"
+            ct-tooltip="Fetch local and Platform data"
+            tooltipPlacement="bottom"
+            (click)="syncFileTree()">
+        <i class="fa fa-refresh"></i>
+    </button>
+</div>
+
+<div class="scroll-container">
+    <div *ngIf="searchContent?.value && searchResults" class="search-results">
+
+        <ct-nav-search-result *ngFor="let entry of searchResults" class="pl-1 pr-1 deep-unselectable"
+                              [id]="entry?.id"
+                              [icon]="entry?.icon"
+                              [title]="entry?.title"
+                              [label]="entry?.label"
+                              [tabData]="entry?.tabData"
+
+                              [ct-drop-zones]="entry?.dragDropZones"
+                              [ct-drag-enabled]="entry?.dragEnabled"
+                              [ct-drag-image-caption]="entry?.dragLabel"
+                              [ct-drag-image-class]="entry?.dragImageClass"
+                              [ct-drag-transfer-data]="entry?.dragTransferData"
+
+                              (dblclick)="openSearchResult(entry)">
+        </ct-nav-search-result>
+
+    </div>
+
+    <ct-line-loader class="m-1" *ngIf="searchContent.value && !searchResults"></ct-line-loader>
+
+    <div *ngIf="searchContent.value && (searchResults && searchResults.length === 0)"
+         class="no-results m-1">
+        <p class="explanation" data-test="no-search-results-public-apps">
+            No search results for “{{ searchContent.value }}.”
+        </p>
+        <i class="icon fa-4x fa fa-search"></i>
+    </div>
+
+    <ct-tree-view #tree
+                  [class.hidden]="searchContent?.value"
+                  [nodes]="rootFolders"
+                  [level]="1"></ct-tree-view>
+</div>

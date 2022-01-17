@@ -1,0 +1,19 @@
+@import "../../../assets/sass/variables";
+
+:host {
+    position: static;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: $gray;
+    border-left: 1px solid $black;
+    flex-shrink: 0;
+
+    .resizer {
+        float: left;
+        height: 100%;
+        width: 6px;
+        cursor: ew-resize;
+    }
+
+}

@@ -1,0 +1,27 @@
+:host {
+    display: inline-block;
+    width: 100%;
+
+    .array-row {
+        display: flex;
+        flex-direction: column;
+
+        ct-input-value-editor {
+            display: flex;
+        }
+
+        .array-entry {
+            display: flex;
+        }
+
+        .delete-btn-group {
+            flex-basis: 30px;
+            padding-left: .5em;
+            padding-top: .1em;
+        }
+    }
+
+    .single-input {
+        display: flex;
+    }
+}

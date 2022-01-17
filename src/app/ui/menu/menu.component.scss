@@ -1,0 +1,24 @@
+@import "../../../assets/sass/variables";
+
+ct-menu {
+    background: #333333;
+    border: 1px solid $black;
+    border-radius: $border-radius;
+    display: block;
+    left: 0;
+    min-width: 200px;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
+
+    &.nested {
+        margin-top: -4px;
+    }
+
+    ct-menu-item {
+        display: block;
+        color: $smoke;
+    }
+}
+

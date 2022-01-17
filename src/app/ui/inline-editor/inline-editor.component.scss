@@ -1,0 +1,24 @@
+@import "../../../assets/sass/variables";
+
+:host {
+    position:relative;
+    width: 100%;
+
+    .hover {
+        border-radius: 2px;
+    }
+
+    .button-section {
+        display: flex;
+        padding-top: 5px;
+        position: absolute;
+        top: 100%;
+        z-index:1;
+    }
+
+    .inline-control-btn ~ .inline-control-btn {
+        margin-left: 5px;
+    }
+
+    cursor: text;
+}

@@ -1,0 +1,21 @@
+@import "../../../../assets/sass/variables";
+
+:host {
+  display: flex;
+  width: 100%;
+
+  .requirement-row {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  input, ct-expression-input, ct-auto-complete {
+    flex: 1;
+  }
+
+  input ~ ct-expression-input, input ~ input {
+    margin-left: 1rem;
+  }
+}

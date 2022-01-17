@@ -1,0 +1,26 @@
+@import "../../../assets/sass/variables";
+
+ct-menu-item {
+    color: $gray-dark;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    border-bottom: 1px solid #232323;
+    padding: .55rem 1rem;
+    line-height: $line-height-base;
+    font-size: 1rem;
+    line-height: 1.5em;
+
+    &.disabled {
+        color: lighten($gray-dark, 20%);
+    }
+
+    &:not(.disabled):hover {
+        background: $gray;
+    }
+
+    .expander {
+        margin-left: 30px;
+        float: right;
+    }
+}

@@ -1,0 +1,54 @@
+@import "../../../assets/sass/variables";
+
+:host {
+    position: relative;
+    display: inline-block;
+
+    .generic-dropdown-button {
+    }
+
+    .generic-menu {
+        z-index: 1000;
+        position: absolute;
+        background: #333333;
+        border: 1px solid $black;
+        border-radius: $border-radius;
+        box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
+
+        &.top {
+            top: -180%;
+        }
+
+        &.right-align {
+            left: 0;
+        }
+
+        &.left-align {
+            right: 0;
+        }
+    }
+
+    /deep/
+    li {
+        border-bottom: 1px solid $toolbar-border;
+        line-height: $line-height-base;
+        padding: .55rem 1rem;
+        cursor: pointer;
+        min-width: 165px;
+        color: $smoke;
+        text-align: left;
+
+        &.dropdown-port-option {
+            width: 215px;
+        }
+
+        &:hover {
+            background: $gray;
+        }
+
+        &.active {
+            background-color: $gray;
+        }
+    }
+}
+

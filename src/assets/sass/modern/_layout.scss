@@ -1,0 +1,94 @@
+@import "../../sass/variables";
+
+
+
+.editor-list {
+    list-style: none;
+
+    .editor-list-item {
+        transition: all .1s;
+        display: flex;
+        overflow: hidden;
+        background: $input-bg;
+        border-radius: $input-border-radius;
+        border: 1px solid $input-border-color;
+        padding: .5em 0;
+
+        &.ct-inspected {
+            background: $editor-panel-selected-background;
+            color: white;
+        }
+
+        &.selected,
+        &.ct-inspected,
+        &:hover {
+            border-color: $editor-panel-selected-border;
+        }
+
+    }
+}
+
+.dropdown-list {
+
+    .item {
+
+        border-bottom: 1px solid $toolbar-border;
+        line-height: $line-height-base;
+        padding: .55rem 1rem;
+        cursor: pointer;
+        min-width: 150px;
+        color: $smoke;
+
+        .text-muted {
+            white-space: nowrap;
+        }
+
+        &:hover {
+            background: $gray;
+        }
+
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $light-gray;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $smoke;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: $smoke;
+}
+
+::-webkit-scrollbar-track {
+    //background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 24px;
+}
+
+//::-webkit-scrollbar-track:hover {
+//    background: #666666;
+//}
+//
+//::-webkit-scrollbar-track:active {
+//    background: #333333;
+//}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+
+}

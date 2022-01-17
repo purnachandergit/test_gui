@@ -1,0 +1,28 @@
+@import "../../../assets/sass/variables";
+
+:host {
+    margin-right: 1rem;
+
+    .active-icon {
+        color: $brand-primary;
+    }
+
+    .update-available {
+        .settings-icon {
+            color: $brand-warning;
+        }
+
+    }
+    .outdated-update {
+        background-color: $brand-warning;
+
+        &:hover {
+            background: lighten($brand-warning, 10%);
+        }
+    }
+
+    .settings-icon {
+        display: inline-block;
+        font-size: 1rem;
+    }
+}

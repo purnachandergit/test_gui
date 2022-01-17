@@ -1,0 +1,37 @@
+@import "forms";
+@import "typography";
+@import "buttons";
+@import "layout";
+@import "tables";
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: normal;
+    src: url("./../fonts/montserrat/montserrat-regular-webfont.woff2");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 300;
+    src: url("./../fonts/montserrat/montserrat-light-webfont.woff2");
+}
+
+.dropdown-list {
+    .list-item {
+        border-bottom: 1px solid $toolbar-border;
+        line-height: $line-height-base;
+        padding: .55rem 1rem;
+        cursor: pointer;
+        min-width: 150px;
+        color: $smoke;
+        white-space: nowrap;
+
+        .text-muted {
+            white-space: nowrap;
+        }
+
+        &:hover {
+            background: $gray;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+@import "../../../../assets/sass/variables";
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .creation-entry {
+        background: $panel-bg;
+        border-radius: $border-radius;
+        border: 1px solid $input-border-color;
+
+        &:hover {
+            border-color: $input-bg-hover;
+        }
+    }
+
+    .description {
+        color: $light-gray;
+    }
+
+    ct-nav-search-result {
+        border-radius: $border-radius;
+        border-bottom: 1px solid $body-bg;
+
+        &:hover {
+            background-color: $body-bg;
+        }
+    }
+
+    .content-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .apps-container {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .apps {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .app-container {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+
+    .app {
+        flex: 1;
+        display: flex;
+        width: 0; //to ensure the two sides don't expand with their content
+        flex-direction: column;
+        border: 1px solid $input-border-color;
+        background: $panel-bg;
+        overflow: hidden;
+    }
+    .revisions {
+        text-align: left;
+        overflow-y: auto;
+
+    }
+
+    /deep/ {
+        .fa-share-alt {
+            color: $carrot;
+            -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{0}, mirror=1)";
+            -webkit-transform: scale(-1, 1);
+            -ms-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+        }
+
+        .fa-terminal {
+            color: $purple;
+        }
+    }
+}

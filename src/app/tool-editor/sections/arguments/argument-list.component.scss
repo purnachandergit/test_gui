@@ -1,0 +1,9 @@
+@import "../../../../assets/sass/variables";
+@import "../../../../assets/sass/mixins";
+
+:host{
+    /deep/ .form-section {
+        @include cli-border($code-args);
+    }
+}
+

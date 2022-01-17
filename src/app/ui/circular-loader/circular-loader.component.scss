@@ -1,0 +1,45 @@
+@import "../../../assets/sass/variables";
+
+:host {
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    .loader-container {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    @for $i from 1 through 4 {
+        $size: #{$i * 25};
+
+        &.loader-#{$size} {
+            .loader {
+                height: #{$i * 12 + "px"};
+                width: #{$i * 12 + "px"};
+            }
+        }
+    }
+
+    .loader {
+        border: 1.5px solid $layout-section-background;
+        border-top: 1.5px solid $brand-primary;
+
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        animation: spin .65s linear infinite;
+    }
+}

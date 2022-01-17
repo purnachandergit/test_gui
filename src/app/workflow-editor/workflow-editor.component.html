@@ -1,0 +1,68 @@
+<ct-action-bar>
+    <ct-tab-selector [distribute]="'auto'" [active]="viewMode" (activeChange)="switchTab($event)">
+        <ct-tab-selector-entry [disabled]="!tabsUnlocked()" data-test="info-tab" [tabName]="'info'">App Info</ct-tab-selector-entry>
+        <ct-tab-selector-entry [disabled]="!tabsUnlocked()" data-test="visual-tab" [tabName]="'graph'">Visual Editor</ct-tab-selector-entry>
+        <ct-tab-selector-entry [disabled]="!tabsUnlocked()" data-test="test-tab"   [tabName]="'test'">Test</ct-tab-selector-entry>
+        <ct-tab-selector-entry data-test="code-tab" [tabName]="'code'" [disabled]="!tabsUnlocked() || !!unavailableError">Code
+        </ct-tab-selector-entry>
+    </ct-tab-selector>
+
+    <ct-common-document-controls [host]="this"></ct-common-document-controls>
+</ct-action-bar>
+
+<ct-notification-bar></ct-notification-bar>
+
+<div class="editor-layout">
+
+    <ct-circular-loader class="loader" *ngIf="isLoading"></ct-circular-loader>
+
+    <div class="full-size-table-display" *ngIf="!!unavailableError">
+        <div class="vertically-aligned-cell text-md-center">
+            <p>This app is currently unavailable.</p>
+            <p>{{ unavailableError }}</p>
+        </div>
+    </div>
+
+
+    <!--Editor Row-->
+    <ct-code-editor *ngIf="viewMode === 'code' && !isLoading"
+                    [formControl]="codeEditorContent"
+                    [options]="{mode: 'ace/mode/yaml'}"
+                    class="editor">
+    </ct-code-editor>
+
+    <ct-workflow-graph-editor *ngIf="viewMode === 'graph' && !isLoading && dataModel"
+                              [host]="this"
+                              [data]="tabData"
+                              [readonly]="isReadonly"
+                              [(model)]="dataModel"
+                              (change)="syncModelAndCode(false)"
+                              (draw)="onGraphDraw($event)"
+                              class="editor-main">
+    </ct-workflow-graph-editor>
+
+    <ct-graph-job-editor *ngIf="viewMode === 'test' && !isLoading && dataModel"
+                         [appID]="this.tabData.id"
+                         [model]="dataModel">
+    </ct-graph-job-editor>
+
+    <ct-app-info *ngIf="viewMode === 'info' && !isLoading && dataModel"
+                 [readonly]="isReadonly"
+                 (change)="syncModelAndCode(false)"
+                 [class.flex-col]="showInspector"
+                 [model]="dataModel">
+    </ct-app-info>
+
+    <!--Object Inspector Column-->
+    <ct-editor-inspector [class.flex-hide]="!showInspector">
+        <ng-template #inspector></ng-template>
+    </ct-editor-inspector>
+</div>
+
+<!--Header & Editor Column-->
+
+<ct-common-report-panel [hidden]="!reportPanel" [host]="this" #reportPanelComponent></ct-common-report-panel>
+
+<ng-template #statusControls>
+    <ct-common-status-controls [host]="this"></ct-common-status-controls>
+</ng-template>

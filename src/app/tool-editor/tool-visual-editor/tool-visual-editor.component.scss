@@ -1,0 +1,15 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/mixins";
+
+:host {
+    overflow-y: auto;
+    width: 100%;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    .base-command-section {
+        @include cli-border($code-base-cmd);
+    }
+}

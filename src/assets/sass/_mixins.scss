@@ -1,0 +1,23 @@
+@import "~bootstrap/scss/mixins";
+@import "./variables";
+
+@mixin cli-border($color) {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background-color: $color;
+  }
+}
+
+@mixin ellipsis() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

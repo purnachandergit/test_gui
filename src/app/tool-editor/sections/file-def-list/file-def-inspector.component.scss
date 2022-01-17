@@ -1,0 +1,14 @@
+@import "../../../../assets/sass/variables";
+
+:host {
+
+    /deep/ .file-content textarea {
+        height: 400px;
+    }
+
+    .align-right {
+        flex: 1;
+        text-align: right;
+    }
+
+}
