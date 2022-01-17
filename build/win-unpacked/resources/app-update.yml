@@ -1,0 +1,4 @@
+owner: rabix
+repo: composer
+provider: github
+updaterCacheDirName: rabix-composer-updater
