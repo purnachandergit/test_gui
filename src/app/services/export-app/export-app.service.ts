@@ -44,7 +44,7 @@ export class ExportAppService {
 		}
 		
 		let dagPath = defaultPath.slice(0, -4).concat(".py");
-		convert(defaultPath, JSON.stringify(appContent, null, 4))
+		convert(defaultPath, appContent)
 			.then(response => this.fileRepository.saveFile(dagPath, new Buffer(response, 'base64').toString())
 				.then((result) => {
 				this.fileRepository.reloadPath(result.dirname);
