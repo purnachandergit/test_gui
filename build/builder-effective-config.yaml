@@ -1,0 +1,39 @@
+directories:
+  output: build
+  buildResources: build-resources
+  app: dist
+appId: io.rabix.composer
+productName: rabix-composer
+asar: true
+asarUnpack:
+  - executor/**
+protocols:
+  - name: rabix-composer
+    role: Editor
+    schemes:
+      - rabix-composer
+mac:
+  target:
+    - dmg
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  entitlements: 'C:\Users\DELL\Desktop\rabix/electron/config/entitlements.mac.plist'
+  entitlementsInherit: 'C:\Users\DELL\Desktop\rabix/electron/config/entitlements.mac.plist'
+win:
+  target:
+    - nsis
+linux:
+  target:
+    - AppImage
+nsis:
+  oneClick: false
+  perMachine: true
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+fileAssociations:
+  - ext: cwl
+    name: CWL
+afterSign: 'C:\Users\DELL\Desktop\rabix/build-scripts/notarize.js'
+dmg:
+  sign: false
+electronVersion: 2.0.18

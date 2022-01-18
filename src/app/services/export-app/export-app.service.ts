@@ -44,7 +44,7 @@ export class ExportAppService {
 		}
 		
 		let dagPath = defaultPath.slice(0, -4).concat(".py");
-		convert(defaultPath, appContent)
+		convert(defaultPath, JSON.stringify(appContent, null, 4))
 			.then(response => this.fileRepository.saveFile(dagPath, new Buffer(response, 'base64').toString())
 				.then((result) => {
 				this.fileRepository.reloadPath(result.dirname);
@@ -58,7 +58,7 @@ async function convert(defaultPath, json_input) {
 	cwlName = cwlName.slice(0, -4)
 	
 	const options = {
-		method: 'GET',
+		method: 'POST',
 		uri: 'https://tuber.int.visa.com/workflow/generate',
 		json: true,
 		headers: {
